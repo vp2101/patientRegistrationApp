@@ -1,0 +1,56 @@
+<div class="container m-3">
+    <h2>Patient List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Disease</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients; let i = index">
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.disease }}</td>
+          <td>
+            <button (click)="openEditModal(i)" class="btn btn-warning me-md-2">Edit</button>
+            <button (click)="deletePatient(i)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Edit Patient Modal -->
+    <div class="modal" id="editPatientModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Patient</h5>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="editName">Name</label>
+                <input type="text" id="editName" class="form-control" [(ngModel)]="selectedPatient.name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="editAge">Age</label>
+                <input type="number" id="editAge" class="form-control" [(ngModel)]="selectedPatient.age" name="age" required>
+              </div>
+              <div class="form-group">
+                <label for="editDisease">Disease</label>
+                <input type="text" id="editDisease" class="form-control" [(ngModel)]="selectedPatient.disease" name="disease" required>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+           <button type="button" class="btn btn-primary" (click)="updatePatient()">Save changes</button> 
+           <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

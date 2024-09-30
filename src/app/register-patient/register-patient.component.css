@@ -1,0 +1,9 @@
+.image-display {
+    text-align: center;
+  }
+  
+  .image-display img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Keep the aspect ratio */
+  }
+  

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #0d6efd;">
+    <a class="navbar-brand m-1 text-white" (click)="onAbout()">
+        <img src="assets/registration.png" style="width: 50px; margin-right: 10px;" />
+         Patient Registration App
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button class="nav-link text-white"  (click)="onAbout()" >About</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link text-white" (click)="onRegister()" >Register Patient</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link text-white" (click)="onListPatient()" >List Patient</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link text-white" (click)="onContactUs()">Contact Us</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" style="color: white; background-color: red; border-radius: 5px; padding: 0.5rem 1rem; cursor: pointer;" (click)="onLogout()">Logout</button>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+  
