@@ -45,6 +45,9 @@ export class LoginComponent {
 
     this.authService.register(this.userRegisterObj);
     alert("Registration Success");
+
+    // Clear the registration form
+    this.resetRegisterForm();
   }
 
   onLogin() {
@@ -69,5 +72,13 @@ export class LoginComponent {
   private isValidPassword(password: string): boolean {
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
     return passwordPattern.test(password);
+  }
+
+  private resetRegisterForm() {
+    this.userRegisterObj = {
+      userName: '',
+      password: '',
+      emailId: ''
+    };
   }
 }
